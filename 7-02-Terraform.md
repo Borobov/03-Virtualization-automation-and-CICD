@@ -63,6 +63,15 @@
 - [Инструкция по настройке провайдера](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/terraform-quickstart#configure-terraform)  
 
 ### Ответ:
+wget https://hashicorp-releases.yandexcloud.net/terraform/1.3.9/terraform_1.3.9_linux_amd64.zip  
+
+unzip terraform_1.3.9_linux_amd64.zip  
+
+chmod 766 terraform  
+
+cp terraform /usr/local/bin/  
+
+terraform init
 
 ---
 
