@@ -118,7 +118,83 @@ Docker Compose - это надстройка над докером, котора
 
 ### Ответ:
 
-[Ссылка на конфиг](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/11b3586fea3dc8f317cf5bf538baed557f66ec7f/img-6-04/docker2.txt)
+```
+version: "3"
+
+services:
+  netology-db:
+	image: postgres:latest
+	container_name: borobovis-netology-db
+	ports:
+  	- 5432:5432
+	volumes:
+  	- ./pg_data:/var/lib/postgresql/data/pgdata
+	environment:
+  	POSTGRES_PASSWORD: borobovis12!3!!
+  	POSTGRES_DB: borobovis-db
+  	PGDATA: /var/lib/postgresql/data/pgdata
+	networks:
+  	borobovis-my-netology-hw:
+    	ipv4_address: 172.22.0.10
+	restart: always
+
+  pgadmin:
+	image: dpage/pgadmin4
+	links:
+  	- netology-db
+	container_name: borobovis-pgadmin
+	environment:
+  	PGADMIN_DEFAULT_EMAIL: borobovis@ilove-netology.com
+  	PGADMIN_DEFAULT_PASSWORD: 789456
+	ports:
+  	- "61231:80"
+	networks:
+  	borobovis-my-netology-hw:
+    	ipv4_address: 172.22.0.11
+	restart: always
+
+  zabbix-server:
+	image: zabbix/zabbix-server-pgsql
+	links:
+  	- netology-db
+	container_name: borobovis-zabbix-netology
+	environment:
+  	DB_SERVER_HOST: '172.22.0.10'
+  	POSTGRES_USER: postgres
+  	POSTGRES_PASSWORD: borobovis12!3!!
+	ports:
+  	- "10051:10051"
+	networks:
+  	borobovis-my-netology-hw:
+    	ipv4_address: 172.22.0.12
+	restart: always
+
+  zabbix-web:
+	image: zabbix/zabbix-web-apache-pgsql
+	links:
+  	- zabbix-server
+	container_name: borobovis-netology-zabbix-frontend
+	environment:
+  	DB_SERVER_HOST: '172.22.0.10'
+  	POSTGRES_USER: 'postgres'
+  	POSTGRES_PASSWORD: borobovis12!3!!
+  	ZBX_SERVER_HOST: "zabbix-web"
+  	PHP_TZ: "Europe/Moscow"
+	ports:
+  	- "80:8080"
+  	- "443:8443"
+	networks:
+  	borobovis-my-netology-hw:
+    	ipv4_address: 172.22.0.13
+	restart: always
+
+networks:
+  borobovis-my-netology-hw:
+	driver: bridge
+	ipam:
+  	config:
+  	- subnet: 172.22.0.0/24
+```
 
 docker ps  
 
