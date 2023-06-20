@@ -55,6 +55,19 @@
 Пример взят [с сайта](https://alpinelinux.org). 
 
 ### Ответ:
+
+1.	Проверим поддерживается libvirt  
+egrep --color=auto 'vmx|svm|0xc0f' /proc/cpuinfo  
+2.	Проверим загружен ли KVM: lsmod | grep kvm  
+![img-6-02-2](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/d416672c928db3314d98afd204edf44e871d4b70/img-6-02/img-6-02-2.png)
+3.	Установим необходимые пакеты: sudo apt install “Virtual*”
+4.	Установим virt manager: sudo apt install virt-manager
+5.	
+![img-6-02-3](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/d416672c928db3314d98afd204edf44e871d4b70/img-6-02/img-6-02-3.png)
+6.
+![img-6-02-4](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/d416672c928db3314d98afd204edf44e871d4b70/img-6-02/img-6-02-4.png)
+
+
  ---
 
 ### Задание 4
