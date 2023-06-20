@@ -80,3 +80,21 @@ egrep --color=auto 'vmx|svm|0xc0f' /proc/cpuinfo
 
 ### Ответ:
 
+Установил GNS  
+sudo apt update  
+sudo apt install -y python3-pip python3-pyqt5 python3-pyqt5.qtsvg \  
+python3-pyqt5.qtwebsockets \  
+qemu qemu-kvm qemu-utils libvirt-clients libvirt-daemon-system virtinst \  
+wireshark xtightvncviewer apt-transport-https \  
+ca-certificates curl gnupg2 software-properties-common  
+
+sudo pip3 install gns3-server  
+sudo pip3 install gns3-gui  
+
+sudo apt install dynamips (без Dynamips не работало сетевое оборудование в GNS)  
+
+Запустил GNS: sudo gns3  
+Создал виртуальную машину (Edit - Preferences - QEMU - Qemu VMs - New VM) и подключил образ iso операционной системы, определил объем диска, объем ОЗЦ, загрузил систему и подключается к консоли.  
+![img-6-02-5](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/d416672c928db3314d98afd204edf44e871d4b70/img-6-02/img-6-02-5.png)
+![img-6-02-6](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/d416672c928db3314d98afd204edf44e871d4b70/img-6-02/img-6-02-6.png)
+
