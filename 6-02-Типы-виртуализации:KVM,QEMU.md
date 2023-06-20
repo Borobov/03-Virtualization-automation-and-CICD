@@ -34,6 +34,13 @@
 Пример взят [с сайта](https://alpinelinux.org). 
 
 ### Ответ: 
+
+1.	sudo apt install qemu-kvm qemu qemu-system
+2.	qemu-img create -f qcow2 hdd.qcow 10G
+3.	qemu-system-x86_64 -hda hdd.qcow -boot d -cdrom ~/alpine-standard-3.13.5-x86.iso -m 640
+4.
+![img-6-02-1](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/d416672c928db3314d98afd204edf44e871d4b70/img-6-02/img-6-02-1.png)
+
 ---
 
 ### Задание 3 
