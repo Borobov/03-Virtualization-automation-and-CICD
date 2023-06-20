@@ -118,7 +118,7 @@ Docker Compose - это надстройка над докером, котора
 
 ### Ответ:
 
-[Конфиг](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/11b3586fea3dc8f317cf5bf538baed557f66ec7f/img-6-04/docker2.txt)
+[Ссылка на конфиг](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/11b3586fea3dc8f317cf5bf538baed557f66ec7f/img-6-04/docker2.txt)
 
 docker ps  
 
