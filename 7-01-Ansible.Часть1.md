@@ -62,6 +62,11 @@ ansible all -m ping -u borobov
 
 ### Ответ:
 
+forks - настраивает количество параллельных процессов, которые может запускть Ansible, и, следовательно, максимальное количество хостов, которые можно настроить параллельно. Значение --fork по умолчанию равно 5.  
+
+serial - можно задать меньшее значение, чем параметр --forks. Это количество хостов, на которых будут запущено параллельно задание или сценарий, для которых установлен параметр serial.  
+
+Комбинация полезна, так как она позволяет вам настроить свой playbook для работы с лучшим количеством хостов для производительности, но затем ограничить определенные задачи до этого значения (например, чтобы гарантировать, что перезапуск службы будет поэтапным, а не применяется ко всем хостов одновременно, что гарантирует отсутствие простоев этой службы с точки зрения конечных пользователей).  
 
 ---
 
@@ -77,3 +82,19 @@ ansible all -m ping -u borobov
  
 ### Ответ:
 
+1. ansible all -m apt -a "name=mc state=present" -u borobov
+![img-7-01-7](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-7.png)
+
+![img-7-01-8](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-8.png)
+
+2. ansible test -m service -a "name=cron" -u borobov  
+![img-7-01-9](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-9.png)
+
+3. Создаю файл: ansible all -m ansible.builtin.file -a "path=/tmp/netology.txt state=touch" -u borobov  
+![img-7-01-10](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-10.png)
+
+Записываю содержимое в файл: ansible all -m blockinfile -a "path=/tmp/netology.txt block='I like Linux'" -u borobov  
+![img-7-01-11](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-11.png)
+
+Результат на одной из управляемых машин  
+![img-7-01-12](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-12.png)
