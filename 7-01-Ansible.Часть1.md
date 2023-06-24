@@ -82,19 +82,24 @@ serial - можно задать меньшее значение, чем пар�
  
 ### Ответ:
 
-1. ansible all -m apt -a "name=mc state=present" -u borobov  
+1. ansible all -m apt -a "name=mc state=present" -u borobov
+
 ![img-7-01-7](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-7.png)
 
 ![img-7-01-8](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-8.png)
 
-2. ansible test -m service -a "name=cron" -u borobov  
+2. ansible test -m service -a "name=cron" -u borobov
+
 ![img-7-01-9](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-9.png)
 
-3. Создаю файл: ansible all -m ansible.builtin.file -a "path=/tmp/netology.txt state=touch" -u borobov  
+3. Создаю файл: ansible all -m ansible.builtin.file -a "path=/tmp/netology.txt state=touch" -u borobov
+
 ![img-7-01-10](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-10.png)
 
 Записываю содержимое в файл: ansible all -m blockinfile -a "path=/tmp/netology.txt block='I like Linux'" -u borobov  
+
 ![img-7-01-11](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-11.png)
 
 Результат на одной из управляемых машин  
+
 ![img-7-01-12](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-12.png)
