@@ -39,7 +39,7 @@ ssh-copy-id borobov@192.168.31.183
 ssh-copy-id borobov@192.168.31.184  
 
 3.
-Создал файл hosts в домашнем каталоге и прописал путь до hosts в ansible.cfg, также предварительно создал конфигурационный файл ansible.cfg
+Создал файл hosts в домашнем каталоге и прописал путь до hosts в ansible.cfg, также предварительно создал конфигурационный файл ansible.cfg   
 ![img-7-01-2](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-2.png)
 
 ![img-7-01-3](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-3.png)
@@ -47,7 +47,7 @@ ssh-copy-id borobov@192.168.31.184
 ![img-7-01-4](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-4.png)
 
 4.
-ansible all -m ping -u borobov
+ansible all -m ping -u borobov  
 ![img-7-01-5](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-5.png)
 
 ![img-7-01-6](https://github.com/Borobov/03-Virtualization-automation-and-CICD/blob/3e4322cea83cf793e805c02e12b9e5d6c0228031/img-7-01/img-7-01-6.png)
